@@ -4,7 +4,6 @@ import './ProgressTracker.css';
 const steps = [
     { name: 'Procedure' },
     { name: 'Upload' },
-    { name: 'Analysis' },
     { name: 'Feedback' },
     { name: 'Report' }
 ];

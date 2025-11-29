@@ -3,67 +3,284 @@
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background-color: #f0f2f5;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     width: 100%;
     max-width: 800px;
     margin: 40px auto;
 }
 
 .file-upload-container h2 {
-    color: #333;
+    color: #1a1a1a;
     margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
 }
 
-.drop-zones-container {
+/* Selected Procedure Banner */
+.selected-procedure-banner {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.procedure-icon {
+    font-size: 32px;
+}
+
+.procedure-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.upload-instruction {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.upload-instruction p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Drop Zone */
+.drop-zone-wrapper {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.drop-zone {
-    width: 48%;
-    height: 200px;
-    border: 2px dashed #d9d9d9;
-    border-radius: 8px;
+.drop-zone-large {
+    width: 100%;
+    min-height: 250px;
+    border: 3px dashed #d9d9d9;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: all 0.3s ease;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-color: #fafafa;
+}
+
+.drop-zone-large.drag-over {
+    background-color: #e6f7ff;
+    border-color: #667eea;
+    border-style: solid;
+    transform: scale(1.02);
+}
+
+.drop-zone-large.has-file {
+    background-color: #f0f9ff;
+    border-color: #4caf50;
+    border-style: solid;
+}
+
+.upload-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.upload-title {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.upload-subtitle {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+.upload-formats {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.format-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.upload-note {
+    color: #999;
+    font-size: 12px;
+}
+
+/* File Preview */
+.file-preview {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
     padding: 20px;
+    background: white;
+    border-radius: 8px;
+    position: relative;
+}
+
+.file-icon {
+    width: 50px;
+    height: 50px;
+    background: #4caf50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.file-details {
+    flex: 1;
+    overflow: hidden;
+}
+
+.file-name {
+    display: block;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-size {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.remove-file-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.remove-file-btn:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+}
+
+/* Upload Error */
+.upload-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: #ffebee;
+    border-left: 4px solid #f44336;
+    border-radius: 4px;
+    color: #c62828;
+    margin-bottom: 20px;
+    width: 100%;
     box-sizing: border-box;
 }
 
-.drop-zone.drag-over {
-    background-color: #e6f7ff;
-    border-color: #1890ff;
+.error-icon {
+    font-size: 20px;
 }
 
-.drop-zone p {
-    color: #555;
-    font-size: 16px;
-    text-align: center;
-}
-
-.file-item {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-}
-
-.file-item span {
-    color: #555;
-}
-
+/* Next Button */
 .next-button {
-    margin-top: 20px;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.next-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.next-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.button-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .file-upload-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .drop-zone-large {
+        min-height: 200px;
+        padding: 30px 15px;
+    }
+
+    .upload-icon {
+        font-size: 48px;
+    }
+
+    .upload-title {
+        font-size: 18px;
+    }
+
+    .file-preview {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .next-button {
+        width: 100%;
+        justify-content: center;
+    }
 }

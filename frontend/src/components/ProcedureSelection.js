@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './ProcedureSelection.css';
 
 const procedures = [
-    'Laparoscopic Cholecystectomy',
-    'Appendectomy',
+    'CardioMytomy',
+    'Liver Resection',
     'Hernia Repair',
     'Coronary Artery Bypass Grafting',
     'Knee Arthroscopy',

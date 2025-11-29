@@ -16,14 +16,17 @@ dependencies = [
    
     
     # Video Processing
+    "pytubefix>=6.0.0",
+    "youtube-transcript-api>=0.6.1",
+    "yt-dlp>=2024.0.0",
+    "opencv-python>=4.8.0",
 
-    
     # ML/AI
 
-    
+
     # Vision Models
 
-    
+
     # Data Processing
     "numpy>=1.26.0",
     "pandas>=2.1.0",
@@ -45,6 +48,7 @@ dependencies = [
     "aiofiles>=23.2.1",
     "tqdm>=4.66.0",
     "rich>=13.7.0",
+    "python-dotenv>=1.0.0",
 ]
 
 [project.optional-dependencies]

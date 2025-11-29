@@ -7,3 +7,11 @@ dist/
 build/
 .DS_Store
 uv.lock
+downloads/*
+frontend/frontend/uploads/metadata/*
+frontend/uploads/metadata/*
+frontend/uploads/videos/*
+frontend/frontend/uploads/videos/
+frontend/.env.example
+nul
+.claude/

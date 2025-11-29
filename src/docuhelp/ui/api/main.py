@@ -6,8 +6,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 import logging
+import os
 from pathlib import Path
-
+from dotenv import load_dotenv
 from .routes import video, feedback, report
 from ..firebase_config import initialize_firebase
 
@@ -15,17 +16,28 @@ from ..firebase_config import initialize_firebase
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
+# Load environment variables from .env file
+load_dotenv()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Lifecycle management for the application"""
     # Startup
     logger.info("Starting Surgical Report Generator API...")
-    initialize_firebase()
-    logger.info("Firebase initialized successfully")
-    
+
+    # Firebase is optional - only initialize if enabled
+    # use_firebase = os.getenv("USE_FIREBASE", "false").lower() == "true"
+    # if use_firebase:
+    #     try:
+    #         initialize_firebase()
+    #         logger.info("Firebase initialized successfully")
+    #     except Exception as e:
+    #         logger.warning(f"Firebase initialization failed: {e}")
+    #         logger.info("Running in local-only mode")
+    # else:
+    logger.info("Running in local-only mode (Firebase disabled)")
+
     yield
-    
+
     # Shutdown
     logger.info("Shutting down API...")
 
@@ -39,13 +51,10 @@ app = FastAPI(
 )
 
 # Configure CORS
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8000").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:8000",
-        "https://your-app.firebaseapp.com",
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

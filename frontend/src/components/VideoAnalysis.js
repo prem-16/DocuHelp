@@ -1,12 +1,21 @@
 import React from 'react';
+import KeyframeSwiper from './KeyframeSwiper';
 import './VideoAnalysis.css';
 
-const VideoAnalysis = () => {
+const VideoAnalysis = ({ videoId, onAnalysisComplete }) => {
+    const handleComplete = (phases) => {
+        console.log('Analysis complete with phases:', phases);
+        if (onAnalysisComplete) {
+            onAnalysisComplete(phases);
+        }
+    };
+
     return (
         <div className="video-analysis-container">
-            <h2>3. Analyzing Video</h2>
-            <div className="spinner"></div>
-            <p>Please wait while we analyze the surgical video...</p>
+            <KeyframeSwiper
+                videoId={videoId}
+                onComplete={handleComplete}
+            />
         </div>
     );
 };

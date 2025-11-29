@@ -212,10 +212,10 @@ API_PORT=8000
 
 ## Project Milestones
 
-- [ ] **Week 1**: Dataset curation + initial VLM model
-- [ ] **Week 2**: Frame processing pipeline + UI prototype
-- [ ] **Week 3**: Feedback system + report generation
-- [ ] **Week 4**: Testing agent + final integration
+- [ ] **Day 1**: Dataset curation + initial VLM model
+- [ ] **Day 1**: Frame processing pipeline + UI prototype
+- [ ] **Day 1**: Feedback system + report generation
+- [ ] **Day 1**: Testing agent + final integration
 
 ## Firebase Setup
 

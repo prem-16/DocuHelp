@@ -1,5 +1,5 @@
 [project]
-name = "surgical-report-generator"
+name = "docuhelp"
 version = "0.1.0"
 description = "AI-powered surgical video analysis and report generation"
 readme = "README.md"
@@ -51,6 +51,8 @@ dependencies = [
 dev = [
     "pytest>=7.4.0",
 ]
+[tool.hatch.build.targets.wheel]
+packages = ["src/docuhelp"]
 
 [build-system]
 requires = ["hatchling"]

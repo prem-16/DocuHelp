@@ -1,0 +1,53 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.procedure-selection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.procedure-selection li {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+.file-upload div {
+  margin: 10px 0;
+}
+
+.tinder-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.annotation-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.swipe-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .annotation-card {
+    width: 80%;
+  }
+}
+
+@media (min-width: 769px) {
+  .annotation-card {
+    width: 50%;
+  }
+}

@@ -1,0 +1,100 @@
+[project]
+name = "surgical-report-generator"
+version = "0.1.0"
+description = "AI-powered surgical video analysis and report generation"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Team Surgical AI", email = "team@example.com" }
+]
+dependencies = [
+    # Core
+    "python-dotenv>=1.0.0",
+    
+    # API Framework
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    
+    # Video Processing
+    "opencv-python>=4.9.0",
+    "opencv-contrib-python>=4.9.0",
+    "ffmpeg-python>=0.2.0",
+    "pillow>=10.2.0",
+    
+    # ML/AI
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "transformers>=4.36.0",
+    "accelerate>=0.25.0",
+    "timm>=0.9.12",
+    
+    # Vision Models
+    "segment-anything>=1.0",
+    "supervision>=0.18.0",
+    
+    # Data Processing
+    "numpy>=1.26.0",
+    "pandas>=2.1.0",
+    "scipy>=1.11.0",
+    
+    # Firebase
+    "firebase-admin>=6.3.0",
+    "google-cloud-firestore>=2.14.0",
+    "google-cloud-storage>=2.14.0",
+    
+    # NLP
+    "openai>=1.6.0",
+    "anthropic>=0.8.0",
+    
+    # Utilities
+    "requests>=2.31.0",
+    "httpx>=0.26.0",
+    "python-multipart>=0.0.6",
+    "aiofiles>=23.2.1",
+    "tqdm>=4.66.0",
+    "rich>=13.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.1.0",
+    "ruff>=0.1.0",
+    "mypy>=1.8.0",
+    "ipython>=8.20.0",
+    "jupyter>=1.0.0",
+    "notebook>=7.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=src --cov-report=term-missing"

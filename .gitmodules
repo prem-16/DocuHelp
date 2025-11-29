@@ -1,0 +1,3 @@
+[submodule "external/GSViT"]
+	path = external/GSViT
+	url = https://github.com/SamuelSchmidgall/GSViT.git

@@ -93,7 +93,7 @@ surgical-report-generator/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-org/surgical-report-generator.git
+git clone --recurse-submodules https://github.com/your-org/surgical-report-generator.git
 cd surgical-report-generator
 ```
 
